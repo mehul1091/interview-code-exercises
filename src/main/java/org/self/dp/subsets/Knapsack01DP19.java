@@ -183,9 +183,9 @@ public class Knapsack01DP19 {
         //corrected code
         if(index == 0){
             if(weightLeft >= weights[index])
-                return dp[index][weightLeft] = values[0];
+                return dp[index][weightLeft] = values[0]; // single item picked
             else
-                return dp[index][weightLeft] = 0;
+                return dp[index][weightLeft] = 0; // single item not picked
         }
 
         if(dp[index][weightLeft] != -1)
@@ -219,9 +219,9 @@ public class Knapsack01DP19 {
         //take only 1 element as example and calculate
         if(index == 0){
             if(weightLeft >= weights[index])
-                return values[0];
+                return values[0]; // single item picked
             else
-                return 0;
+                return 0; // single item not picked
         }
 
         //notpick
