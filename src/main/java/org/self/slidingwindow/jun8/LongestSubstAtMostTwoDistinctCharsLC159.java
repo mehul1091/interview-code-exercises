@@ -45,7 +45,7 @@ public class LongestSubstAtMostTwoDistinctCharsLC159 {
                     if(freq.get(ch) > 1 && freq.containsKey(ch))
                         freq.put(ch, freq.get(ch) - 1);
                     else
-                        freq.remove(ch);
+                        freq.remove(ch); // Count drops to 0, so remove it entirely
 
                     start++;
                 }
