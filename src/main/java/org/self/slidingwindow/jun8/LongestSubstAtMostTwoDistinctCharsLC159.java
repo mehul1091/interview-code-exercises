@@ -28,6 +28,7 @@ public class LongestSubstAtMostTwoDistinctCharsLC159 {
 
             char ch = s.charAt(end);
 
+            // Expand window if we have < 2 distinct chars OR the char is already in our window
             if(freq.size() < 2 || freq.containsKey(ch)){
                 //expand window from right if size of map < 2
                 freq.put(ch, freq.getOrDefault(ch, 0) + 1);
@@ -37,6 +38,7 @@ public class LongestSubstAtMostTwoDistinctCharsLC159 {
             }
             else{
                 //shrink window when map size >= 2
+                // Shrink window from the left when we hit a 3rd distinct character
                 while(freq.size() >= 2){
                     ch = s.charAt(start);
 
